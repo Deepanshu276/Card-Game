@@ -23,7 +23,7 @@ This is a multiplayer card game implemented in Go. The game supports 2 to 4 play
 
 - NOTE: actions are not stackable i.e. if Q is played by player 1 then player two draws two cards and cannot play a Q from his hand on that turn even if available
 
-# USAGE
+# Usage
 
 1. Clone the Repositery
 
@@ -52,6 +52,30 @@ go run main.go
 3. During each player's turn, enter the index of the card to play or enter 'd' to draw a card.
 4. The game will display the current player, the discard pile's top card, and the player's hand.
 5. Continue playing until a player runs out of cards or the draw pile is empty.
+
+# Unit Test
+
+The code includes unit tests to verify the correctness of the game implementation. To run the tests, follow these steps:
+  - Save the unit test code in a file with a _test.go extension, for example, game_test.go.
+  - Open a terminal or command prompt and navigate to the directory where the file is saved.
+  - Make sure you have Go installed on your system and that it is properly configured.
+  - Run the following command to execute the unit tests:
+    ```
+     go test -v
+
+    ```
+  - The -v flag is optional and provides verbose output, displaying the details of each test case.
+  - The test results will be displayed in the terminal, indicating whether each test case passed or failed.
+
+## Unit Test Examples
+
+The unit tests in the code cover the initialization of the game and the play of a card. Here are the examples of the unit tests:
+
+1. TestInitialize: This test verifies that the game is initialized correctly with the expected number of players, deck size, and discard pile size.
+
+2. TestPlayCard: This test simulates a player playing a card and checks if the play is successful, the player's hand is updated correctly, and there are no errors.
+
+
 
 
 
