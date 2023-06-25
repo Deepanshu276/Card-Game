@@ -180,14 +180,6 @@ func (g *Game) reverseDirection() {
 	g.Direction *= -1
 }
 
-// Make the next player draw a specified number of cards.
-func (g *Game) nextPlayerDrawCards(numCards int) {
-	nextPlayer := g.getNextPlayerIndex()
-	for i := 0; i < numCards; i++ {
-	card := g.drawCard()
-	g.Players[nextPlayer].Hand = append(g.Players[nextPlayer].Hand, card)
-	}
-	}
 	
 // Draw a card from the draw pile.
 func (g *Game) drawCard() Card {
@@ -199,6 +191,15 @@ func (g *Game) drawCard() Card {
 	return card
 		}
 
+// Make the next player draw a specified number of cards.
+func (g *Game) nextPlayerDrawCards(numCards int) {
+	nextPlayer := g.getNextPlayerIndex()
+	for i := 0; i < numCards; i++ {
+	card := g.drawCard()
+	g.Players[nextPlayer].Hand = append(g.Players[nextPlayer].Hand, card)
+	}
+	}
+	
 func createDeck() []Card {
 	ranks := []string{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"}
 	suits := []string{"Spades", "Clubs", "Diamonds", "Hearts"}
